@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui" 
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+      dir="ltr" >
+    <h:head>
+        <title>UMCK-Wellcon</title>
+        <meta name="author" content="Fabio Gomes Rocha" />
+    </h:head>
+    <h:body style="padding-top: 50px; padding-bottom: 20px;">
+        <b:navBar brand="SGP" brandHref="dashboard.xhtml" inverse="true" fixed="top">
+            <b:navbarLinks>
+                <b:dropMenu value="Cadastros">
+                    <b:navLink value="Projetos" href="#"></b:navLink>
+                    <b:navLink value="Usuários" href="#"></b:navLink>
+                    <b:navLink value="Tarefas" href="#"></b:navLink>
+                    <b:navLink></b:navLink>
+                    <b:navLink header="Cliente" href="#"></b:navLink>
+                </b:dropMenu>
+
+                <b:dropMenu value="Relatórios">
+                    <b:navLink value="Projetos" href="#"></b:navLink>
+                    <b:navLink value="Tarefas" href="#"></b:navLink>
+                </b:dropMenu>
+
+                <b:dropMenu value="Meu Perfil">
+                    <b:navLink value="Configuração" href="#"></b:navLink>
+                </b:dropMenu>
+
+                <b:navLink value="Sobre" href="#"></b:navLink>
+                <b:navLink value="Contato" href="#"></b:navLink>                 
+            </b:navbarLinks>
+            <b:navbarLinks pull="right"><b:navLink value="Usuário" href="#"></b:navLink></b:navbarLinks>
+
+
+        </b:navBar>
+        <b:jumbotron>
+        SGP::Sistema de Gestão de Projetos
+        </b:jumbotron>
+        <b:container>
+            <b:row>
+                <b:column col-md="6">
+                    <h2>SGP</h2>
+                    <p>Saiba mais sobre o UMCK e como ele pode ajudar sua organização </p>
+                    <p><b:button outcome="" value="Ver detalhes »"></b:button></p>
+                </b:column>
+                <b:column col-md="6">
+                    <h2>JSF</h2>
+                    <p>Entenda o funcionamento do UMCK  </p>
+                    <p><b:button outcome="" value="Ver detalhes »"></b:button></p>
+                </b:column>
+            </b:row>
+
+            <hr></hr>
+
+            <footer>
+                <p>Programação Web II - Unit - © Fabio Gomes Rocha - 2018</p>
+            </footer>
+        </b:container>
+    </h:body>
+</html>
