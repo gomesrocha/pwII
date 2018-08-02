@@ -1,0 +1,73 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui" 
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+      xmlns:p="http://primefaces.org/ui"
+      dir="ltr" >
+    <h:head>
+        <title>DILIPRED</title>
+        <meta name="author" content="Fabio Gomes Rocha" />
+    </h:head>
+    <h:body style="padding-top: 50px; padding-bottom: 20px;">
+        <b:navBar brand="DILIPRED" brandHref="dashboard.xhtml" inverse="true" fixed="top">
+            <b:navbarLinks>
+                <b:dropMenu value="Cadastros">
+                    <b:navLink value="Materiais" href="#"></b:navLink>
+                    <b:navLink value="Usuários" href="#"></b:navLink>
+                    
+                </b:dropMenu>
+
+                <b:dropMenu value="Relatórios">
+                    <b:navLink value="Materiais" href="#"></b:navLink>
+                    <b:navLink value="Usuarios" href="#"></b:navLink>
+                </b:dropMenu>
+
+                <b:dropMenu value="Meu Perfil">
+                    <b:navLink value="Configuração" href="#"></b:navLink>
+                </b:dropMenu>
+
+                <b:navLink value="Sobre" href="#"></b:navLink>
+                <b:navLink value="Contato" href="#"></b:navLink>                 
+            </b:navbarLinks>
+            <b:navbarLinks pull="right"><b:navLink value="Usuário" href="#"></b:navLink></b:navbarLinks>
+
+
+        </b:navBar>
+        <b:jumbotron>
+        DILIPRED::Biblioteca Digital da Educação Protestante
+        </b:jumbotron>
+        <b:container>
+            <h:form>
+                <h:panelGrid columns="2" width="60%">
+                Titulo: <p:inputText />
+                <br /><br />
+                Palavras-chave: <p:inputText />
+                <br /><br />
+                Tipo: <p:inputText />
+                <br /><br />
+                Editora: <p:inputText />
+                <br /><br />
+                Ano: <p:inputText />
+                <br /><br />
+                Arquivo: <p:inputText />
+                <br /><br />
+                </h:panelGrid>
+                <h:panelGrid columns="1" width="100%">
+                Resumo:<br />
+                <p:editor widgetVar="editor1"  height="300" style="margin-bottom:10px"/> <br />
+                <b:commandButton value="Cadastrar" />
+                </h:panelGrid>
+            </h:form>
+
+            
+        </b:container>
+
+        <b:container>
+            
+
+            <footer>
+                <p>Unit - © Fabio Gomes Rocha / Ester Fraga - 2018</p>
+            </footer>
+        </b:container>
+    </h:body>
+</html>
