@@ -6,28 +6,31 @@
 package control;
 
 import javax.inject.Named;
-import javax.enterprise.context.Dependent;
+import javax.enterprise.context.SessionScoped;
+import java.io.Serializable;
 
 /**
  *
  * @author fabio
  */
 @Named(value = "userBeans")
-@Dependent
-public class UserBeans {
+@SessionScoped
+public class UserBeans implements Serializable {
 
-    private String email;
+    private String login;
     private String senha;
     private String nome;
     public UserBeans() {
     }
-
-    public String getEmail() {
-        return email;
+    public String logar(){
+        return "dashboard";
+    }
+    public String getLogin() {
+        return login;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getSenha() {
@@ -45,8 +48,6 @@ public class UserBeans {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String salvar(){
-        return "dashboard";
-    }
+    
     
 }
