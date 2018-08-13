@@ -15,11 +15,11 @@
                 <h:form>
                     <h:panelGrid columns="2" cellpadding="15px" cellspacing="15px" width="90%">
                             <h:outputText value="Nome: " />  
-                            <b:inputText />
+                            <b:inputText value="#{userBeans.nome}"/>
                             <h:outputText value="Email: " />  
-                            <b:inputText />
+                            <b:inputText value="#{userBeans.login}"/>
                             <h:outputText value="Senha: " />  
-                            <b:inputText />
+                            <b:inputText value="#{userBeans.senha}"/>
                             <h:outputText value="Tipo: " />  
                             <b:selectOneMenu>
                                 <f:selectItem itemLabel="(Please select)" itemValue="" />
@@ -29,7 +29,7 @@
                             </b:selectOneMenu>
                     </h:panelGrid>
                     
-                    <b:commandButton value="Cadastrar" />
+                    <b:commandButton value="Cadastrar" action="#{userBeans.salvar()}" />
                 </h:form>
                 
                 

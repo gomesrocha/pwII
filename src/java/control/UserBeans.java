@@ -8,6 +8,11 @@ package control;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.List;
+import model.UsuarioBR;
+import model.dao.UsuarioDao;
+import model.dao.entidades.Tipo;
+import model.dao.entidades.Usuario;
 
 /**
  *
@@ -20,11 +25,18 @@ public class UserBeans implements Serializable {
     private String login;
     private String senha;
     private String nome;
+    private Tipo tipo;
+    private List<Usuario> lista;
+
     public UserBeans() {
+        UsuarioDao daouser = new UsuarioDao();
+        this.lista = daouser.listaCompleta();
     }
-    public String logar(){
+
+    public String logar() {
         return "dashboard";
     }
+
     public String getLogin() {
         return login;
     }
@@ -48,8 +60,29 @@ public class UserBeans implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String salvar(){
-        return "manUser";
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+
+    public List<Usuario> getLista() {
+        UsuarioDao daouser = new UsuarioDao();
+        this.lista = daouser.listaCompleta();
+        return this.lista;
+    }
+
+    public void setLista(List<Usuario> lista) {
+        this.lista = lista;
+    }
+
+    public String salvar() {
+        UsuarioBR userbr = new UsuarioBR();
+        return userbr.salvar(this.login, this.senha, this.nome, this.tipo);
     }
     
+
 }

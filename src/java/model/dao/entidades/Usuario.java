@@ -24,22 +24,13 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @Table(name = "usuario")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")
-    , @NamedQuery(name = "Usuario.findByIdusuario", query = "SELECT u FROM Usuario u WHERE u.idusuario = :idusuario")
-    , @NamedQuery(name = "Usuario.findByNome", query = "SELECT u FROM Usuario u WHERE u.nome = :nome")
-    , @NamedQuery(name = "Usuario.findByEmail", query = "SELECT u FROM Usuario u WHERE u.email = :email")
-    , @NamedQuery(name = "Usuario.findByLogin", query = "SELECT u FROM Usuario u WHERE u.login = :login")
-    , @NamedQuery(name = "Usuario.findBySenha", query = "SELECT u FROM Usuario u WHERE u.senha = :senha")})
-public class Usuario implements Serializable {
+public class Usuario implements GenericEntity {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Basic(optional = false)
-    @Column(name = "idusuario")
-    private Integer idusuario;
+    private Long id;
     @Size(max = 45)
     @Column(name = "nome")
     private String nome;
@@ -62,21 +53,8 @@ public class Usuario implements Serializable {
     public void setTipo(Tipo tipo) {
         this.tipo = tipo;
     }
-    
-    
+
     public Usuario() {
-    }
-
-    public Usuario(Integer idusuario) {
-        this.idusuario = idusuario;
-    }
-
-    public Integer getIdusuario() {
-        return idusuario;
-    }
-
-    public void setIdusuario(Integer idusuario) {
-        this.idusuario = idusuario;
     }
 
     public String getNome() {
@@ -112,28 +90,8 @@ public class Usuario implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idusuario != null ? idusuario.hashCode() : 0);
-        return hash;
+    public Long getId() {
+        return id;
     }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Usuario)) {
-            return false;
-        }
-        Usuario other = (Usuario) object;
-        if ((this.idusuario == null && other.idusuario != null) || (this.idusuario != null && !this.idusuario.equals(other.idusuario))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "model.dao.Usuario[ idusuario=" + idusuario + " ]";
-    }
-    
 }

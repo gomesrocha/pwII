@@ -18,7 +18,7 @@ import javax.validation.constraints.Size;
 public class Tipo implements GenericEntity{
  private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @Size(max = 45)
     private String usrTio;
