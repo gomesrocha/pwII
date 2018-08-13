@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.dao;
+package model.dao.entidades;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -53,7 +53,17 @@ public class Usuario implements Serializable {
     @Size(max = 10)
     @Column(name = "senha")
     private String senha;
+    private Tipo tipo;
 
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+    
+    
     public Usuario() {
     }
 

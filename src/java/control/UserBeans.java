@@ -48,6 +48,8 @@ public class UserBeans implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
+    public String salvar(){
+        return "manUser";
+    }
     
 }
