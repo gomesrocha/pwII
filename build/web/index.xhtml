@@ -20,10 +20,12 @@
         <b:container>
             <h:form styleClass="form-signin" prependId="false">
                 <h2 class="form-signin-heading">SGP::Login</h2>
-                <b:inputText id="email" placeholder="#{bundle.login}" value="#{userBeans.login}">
+                <b:messages />
+                <b:inputText id="email" placeholder="#{bundle.login}" value="#{userBeans.login}" required="true">
                     <f:facet name="prepend">
                         <b:icon name="user" />
                     </f:facet>
+                    <f:validateLength minimum="5" />
                 </b:inputText>
                 <b:inputText id="password" placeholder="#{bundle.passwd}" value="#{userBeans.senha}" type="password">
                     <f:facet name="prepend">

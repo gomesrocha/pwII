@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cadastro</title>
+    </h:head>
+    <h:body>
+        <h1>Cadastro de projeto</h1>
+        <h:form>
+            <h:panelGrid columns="3">
+                    <h:outputText value="Entre com o valor:" />
+                <h:inputText id="valor" value="#{projetoBeans.valor}"  required="true">
+                    <f:convertNumber minFractionDigits="2" />
+                    <f:validateLongRange minimum="3" maximum="100" />
+                    <f:ajax event="keyup" execute="@this" render="valorinf" />
+                </h:inputText>
+                <h:message for="valor" styleClass="errorMessage" style="color:red"/>
+                
+                <h:outputText value="Entre com o cartão:" />
+                <h:inputText id="cartao" value="#{projetoBeans.cartao}" required="true">
+                    <f:validateLength minimum="13" />
+                    <f:ajax event="keyup" execute="@this" render="cartaoinf" />
+                </h:inputText>
+                <h:message for="cartao" styleClass="errorMessage" style="color:red"/>
+                
+                <h:outputText value="Entre com a data:" />
+                <h:inputText id="data" value="#{projetoBeans.data}" required="true">
+                    <f:convertDateTime pattern="MM/yyyy" />
+                    <f:ajax event="keyup" execute="@this" render="datainf" />
+                </h:inputText>
+                <h:message for="data" styleClass="errorMessage" style="color:red"/>
+                
+            </h:panelGrid>
+            <h:commandButton value="Cadastrar" action="#{projetoBeans.cadastro()}" />
+        </h:form>
+        
+          <br />
+        <h:panelGrid columns="2">
+            <h:outputText value="Valor:" />
+            <h:outputText id="valorinf" value="#{projetoBeans.valor}">
+                <f:convertNumber type="currency" />
+            </h:outputText>
+            <h:outputText value="Cartão:" />
+            <h:outputText id="cartaoinf" value="#{projetoBeans.cartao}" />
+            <h:outputText value="Data:" />
+            <h:outputText id="datainf" value="#{projetoBeans.data}">
+                <f:convertDateTime pattern="MM/yyyy" />
+            </h:outputText>            
+        </h:panelGrid>
+    </h:body>
+</html>
+

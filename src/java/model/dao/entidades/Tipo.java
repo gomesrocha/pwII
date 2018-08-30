@@ -21,7 +21,7 @@ public class Tipo implements GenericEntity{
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @Size(max = 45)
-    private String usrTio;
+    private String usrTipo;
 
     public Tipo() {
     }
@@ -31,14 +31,13 @@ public class Tipo implements GenericEntity{
         return id;
     }
 
-   
-
-    public String getUsrTio() {
-        return usrTio;
+    public String getUsrTipo() {
+        return usrTipo;
     }
 
-    public void setUsrTio(String usrTio) {
-        this.usrTio = usrTio;
+    public void setUsrTipo(String usrTipo) {
+        this.usrTipo = usrTipo;
     }
+    
     
 }
